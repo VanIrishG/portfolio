@@ -25,7 +25,7 @@
             text-align: center;
             padding: 20px;
             position: relative;
-            overflow: hidden; /* To hide text when it moves off the screen */
+            overflow: hidden; /* Hide text when moving off screen */
         }
 
         .overlay {
@@ -34,7 +34,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.2); /* Reduced opacity for less darkness */
+            background-color: rgba(0, 0, 0, 0.3); /* Light dark overlay for a romantic feel */
             z-index: 1;
         }
 
@@ -44,9 +44,10 @@
             padding: 2rem 3rem;
             max-width: 800px;
             margin: 20px;
-            font-size: 1.25rem;
+            font-size: 1.5rem; /* Slightly larger font for a romantic feel */
             line-height: 1.8;
-            animation: scrollUp 10s linear infinite; /* Animation for scrolling */
+            font-weight: 300; /* Lighter font weight for elegance */
+            animation: scrollUp 30s linear infinite; /* Slower scrolling */
         }
 
         /* Scroll up animation */
@@ -60,14 +61,29 @@
         }
 
         .text-container p {
-            margin-bottom: 1.5rem;
-            font-style: italic;
+            margin-bottom: 2rem;
+            font-style: italic; /* Adds a soft, romantic touch */
+            opacity: 0;
+            animation: fadeIn 3s ease-in-out forwards; /* Fades in the text */
+        }
+
+        /* Fade-in effect for each paragraph */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         .text-container h1 {
-            font-size: 2rem;
-            font-weight: bold;
+            font-size: 2.5rem;
+            font-weight: 600;
             margin-bottom: 2rem;
+            text-transform: uppercase; /* Adds a bit of formality */
+            letter-spacing: 0.1em;
+            color: #FFFF; /* Soft pink color for the heading */
         }
     </style>
 </head>
