@@ -25,6 +25,7 @@
             text-align: center;
             padding: 20px;
             position: relative;
+            overflow: hidden; /* To hide text when it moves off the screen */
         }
 
         .overlay {
@@ -45,6 +46,17 @@
             margin: 20px;
             font-size: 1.25rem;
             line-height: 1.8;
+            animation: scrollUp 10s linear infinite; /* Animation for scrolling */
+        }
+
+        /* Scroll up animation */
+        @keyframes scrollUp {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
         }
 
         .text-container p {
