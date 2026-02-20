@@ -438,8 +438,11 @@ musicInput.addEventListener('change', e => {
 });
 
 // ========== LOADER ==========
-gsap.to(".loader-text", { opacity: 0, delay: 1, duration: 0.8 });
-gsap.to("#start-btn", { opacity: 1, y: -10, delay: 1.5, duration: 1 });
+gsap.to(".loader-text", { opacity: 0, delay: 1, duration: 0.8, onComplete: () => {
+    document.querySelector('.loader-text').textContent = 'Happy Birthday 💗';
+    gsap.to(".loader-text", { opacity: 0.8, duration: 1 });
+}});
+gsap.to("#start-btn", { opacity: 1, y: -10, delay: 2.5, duration: 1 });
 
 document.getElementById('start-btn').addEventListener('click', () => {
     if (musicReady) audioEl.play().catch(() => {});
@@ -525,3 +528,4 @@ document.getElementById('replay-btn').addEventListener('click', () => {
 </script>
 </body>
 </html>
+
